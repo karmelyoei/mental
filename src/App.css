@@ -9,7 +9,7 @@
 
 .subheader {
   position: relative;
-  left: 349px !important;
+  left: 146px !important;
   top: 31px !important;
 }
 
@@ -61,4 +61,12 @@ img {
 
 .text {
   padding-top: 30px !important;
+}
+
+.result {
+  position: relative;
+  left: 100px !important;
+  margin-bottom: 30px;
+  padding-bottom: 20px !important;
+  font-size: 30px !important;
 }

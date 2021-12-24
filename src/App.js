@@ -5,19 +5,16 @@ import Chart from "./components/Chart";
 import Form from "./components/form";
 
 function App() {
-  const [articles, setArticles] = useState([]);
+  const [value, setValue] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000", {
+    fetch("http://localhost:5000/test", {
       methods: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
       .then((response) => response.json())
-      .then((response) => setArticles(response))
+      .then((response) => setValue(response))
       .catch((error) => console.log(error));
-  }, []);
-  console.log("articles", articles);
+  }, [value]);
+  console.log("articles", value);
   return (
     <div className="App">
       <div className="sectionOne">
@@ -37,7 +34,11 @@ function App() {
         <Form />
 
         <div className="plot">
-          <Chart />
+          <Typography className="header" color="primary" className="result">
+            {value.text == 0
+              ? "You have a mental illness please go to therapist!"
+              : "Yay you dont have any mental illness, continue enjoying your life!"}
+          </Typography>
         </div>
       </div>
     </div>
